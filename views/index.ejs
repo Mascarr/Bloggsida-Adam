@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv"> <!-- Ändrade språket till svenska -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogg</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="titles">Välkommen till bloggen!</h1>
+      <a href="/posts/new">Skapa nytt inlägg</a>
+    </div>
+    <hr />
+    <div class="content">
+      <h2>Alla inlägg</h2>
+      <div class="content-items">
+        <ul>
+          <% blogPosts.forEach((post, index) => { %>
+            <li>
+              <% if (post && post.title && post.content) { %>
+                <a href="/posts/<%= index %>"><%= post.title %></a>
+              <% } else { %>
+                <p>Error: Invalid post data</p>
+              <% } %>
+            </li>
+          <% }); %>          
+        </ul>        
+      </div>
+    </div>
+  </body>
+
+  <style>
+    body {
+      background-color: orange; /* Orange bakgrund */
+      font-family: Arial, sans-serif; /* Ställer in typsnittsfamilj */
+    }
+
+    .header {
+      background-color: black; /* Svart bakgrund för header */
+      color: white; /* Vit textfärg */
+      padding: 20px; /* Lägger till padding */
+      text-align: center; /* Centrerar text */
+    }
+
+    #titles {
+      font-size: 36px; /* Större fontstorlek för titel */
+    }
+
+    .header a {
+      color: white; /* för länkar */
+      text-decoration: none; /* Tar bort understrykning från länkar */
+      margin-left: 20px; /* Lägger till marginal för att separera länken från titeln */
+    }
+
+    .content {
+      padding: 20px; /* Lägger till padding till innehållet */
+    }
+
+    h2 {
+      color: white; /* Vit färg för rubriker */
+    }
+
+    ul {
+      list-style-type: none; /* Tar bort punktlistor från listan */
+    }
+
+    li {
+      margin-bottom: 10px; /* Lägger till marginal mellan listobjekt */
+    }
+
+    a {
+      color: #007bff; /* Blå färg för länkar */
+      text-decoration: none; /* Tar bort understrykning från länkar */
+    }
+
+    a:hover {
+      text-decoration: underline; /* Understryk länkar vid hover */
+    }
+
+    p {
+      color: red; /* Röd färg för felmeddelanden */
+    }
+  </style>
+</html>

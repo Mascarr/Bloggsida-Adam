@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv"> <!-- Ändrade språket till svenska -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nytt inlägg</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>  
+  <div class="header">
+    <h1 id="titles">Skapa nytt inlägg</h1>
+  </div>
+  <div class="content">
+    <form action="/posts" method="post"> <!-- Ändrade handlingen för att skicka data till /posts -->
+      <label for="title">Titel</label><br />
+      <input type="text" id="title" name="title" /><br /><br />
+      <label for="content">Innehåll</label><br />
+      <textarea id="content" name="content"></textarea><br /><br />
+      <button type="submit">Skapa inlägg</button>
+    </form>
+  </div>
+</body>
+
+<style>
+  body {
+    font-family: Arial, sans-serif; /* Ställer in typsnittsfamilj */
+    background-color: #f8f9fa; /* Ljusgrå bakgrund */
+    color: #333; /* Mörkgrå textfärg */
+  }
+
+  .header {
+    background-color: #007bff; /* Blå bakgrund för header */
+    color: white; /* Vit textfärg */
+    padding: 20px; /* Lägger till padding */
+    text-align: center; /* Centrerar text */
+  }
+
+  #titles {
+    font-size: 24px; /* Större fontstorlek för titel */
+  }
+
+  .content {
+    padding: 20px; /* Lägger till padding till innehåll */
+    max-width: 400px; /* Begränsa bredden på innehållet */
+    margin: 0 auto; /* Centrera innehåll horisontellt */
+  }
+
+  form {
+    background-color: white; /* Vit bakgrund för formulär */
+    padding: 20px; /* Lägger till padding */
+    border-radius: 5px; /* Runda hörn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lägger till skugga */
+  }
+
+  label {
+    font-weight: bold; /* Fet stil för etiketttext */
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%; /* Full bredd för inmatningsfält */
+    padding: 10px; /* Lägger till padding */
+    margin-bottom: 10px; /* Lägger till marginal */
+    border: 1px solid #ccc; /* Grå kantlinje */
+    border-radius: 3px; /* Runda hörn */
+    box-sizing: border-box; /* Inkludera padding och kantlinje i bredden */
+  }
+
+  button[type="submit"] {
+    background-color: #007bff; /* Blå bakgrund för knapp */
+    color: white; /* Vit textfärg */
+    padding: 10px 20px; /* Lägger till padding */
+    border: none; /* Ta bort kantlinje */
+    border-radius: 3px; /* Runda hörn */
+    cursor: pointer; /* Lägg till pekarkursor */
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Mörkare blå vid hover */
+  }
+</style>
+</html>
